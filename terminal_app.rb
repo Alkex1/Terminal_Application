@@ -1,9 +1,10 @@
 require 'colorize'
 
 def note_app
-    puts "Hello what would you like to do (options: make file, make directory, quicknote)"
+    puts "Hello what would you like to do (options: make file, make directory, quicknote)".colorize(:cyan).underline
+        puts "enter 'exit' at any point to close application".colorize(:light_cyan)
         user_input = gets.chomp
-    until user_input == "done"
+    while user_input
     
         if user_input == "quicknote" #|| "q"
             puts "quicknote:".colorize(:light_blue).underline
@@ -11,7 +12,9 @@ def note_app
             u_input1 = gets.chomp
 
             
-            if u_input1 == "back"
+            if u_input1 == "exit"
+                exit
+            elsif u_input1 == "back"
                 note_app
             end
 
@@ -27,12 +30,14 @@ def note_app
 
             u_input2 = gets.chomp
 
-            if u_input2 == "back"
+            if u_input2 == "exit"
+                exit
+            elsif u_input2 == "back"
                 note_app
             end
             
             File.new("#{u_input2}.txt", "w")
-            puts "Created #{u_input2}.txt"
+            puts "Created: #{u_input2}.txt"
             
             
             
@@ -42,10 +47,15 @@ def note_app
             puts "type 'back' at any point to end task".colorize(:light_red)
             
             u_input3= gets.chomp
-            if u_input3 == "back"
+
+            if u_input3 == "exit"
+                exit
+            elsif u_input3 == "back"
                 note_app
             end
+
             Dir.mkdir("#{u_input3}") unless File.exists?("#{u_input3}")
+            puts "Created directory: #{u_input3}"
         
         elsif user_input == "exit"
             exit
@@ -58,4 +68,3 @@ def note_app
 end
 
 note_app
-
