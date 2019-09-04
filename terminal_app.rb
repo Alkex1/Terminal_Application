@@ -1,5 +1,18 @@
 require 'colorize'
 
+puts "Hey, #{ARGV[0]}"
+
+ARGV.clear
+
+# def exit_back(i)
+#     if i == "exit"
+#         exit 
+#     else i == "back"
+#         note_app
+#     end
+# end
+
+
 def note_app
     puts "Hello what would you like to do (options: make file, make directory, quicknote)".colorize(:cyan).underline
         puts "enter 'exit' at any point to close application".colorize(:light_cyan)
@@ -11,7 +24,6 @@ def note_app
             puts "type 'back' at any point to end task".colorize(:blue)
             u_input1 = gets.chomp
 
-            
             if u_input1 == "exit"
                 exit
             elsif u_input1 == "back"
@@ -21,8 +33,7 @@ def note_app
             file = File.open("quicknote.txt", "a")
             file << "\r" + "#{u_input1}"
             file.close
-
-        
+            
 
         elsif user_input == "make file"
             puts "What would you like to call it".colorize(:light_green).underline
@@ -56,7 +67,21 @@ def note_app
 
             Dir.mkdir("#{u_input3}") unless File.exists?("#{u_input3}")
             puts "Created directory: #{u_input3}"
-        
+
+        elsif user_input == "read quicknote"
+            # file = "quicknote.txt"
+            # f = File.read(file)
+            # puts f
+
+            # break   
+            
+            
+            File.open("quicknote.txt").each do |line|;
+                puts line
+                # file.close
+                end
+            return note_app
+
         elsif user_input == "exit"
             exit
         
