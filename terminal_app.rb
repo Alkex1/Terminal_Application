@@ -19,7 +19,7 @@ def note_app
         user_input = gets.chomp
     while user_input
     
-        if user_input == "quicknote" #|| "q"
+        if user_input == "quicknote" || user_input == "q"
             puts "quicknote:".colorize(:light_blue).underline
             puts "type 'back' at any point to end task".colorize(:blue)
             u_input1 = gets.chomp
@@ -31,7 +31,7 @@ def note_app
             end
 
             file = File.open("quicknote.txt", "a")
-            file << "\r" + "#{u_input1}"
+            file << "#{u_input1}" + "\r\n"
             file.close
             
 
@@ -68,18 +68,19 @@ def note_app
             Dir.mkdir("#{u_input3}") unless File.exists?("#{u_input3}")
             puts "Created directory: #{u_input3}"
 
-        elsif user_input == "read quicknote"
+        elsif user_input == "read quicknote" || user_input == "note"
             # file = "quicknote.txt"
             # f = File.read(file)
-            # puts f
-
-            # break   
+            # p f
+            # # break
+            # return note_app   
             
             
             File.open("quicknote.txt").each do |line|;
                 puts line
                 # file.close
                 end
+                # break
             return note_app
 
         elsif user_input == "exit"
