@@ -2,11 +2,11 @@
 
 ### Statement of Purpose and scope for Terminal Application
 
-#### <u>What will the application do?</u>
+#### What will the application do?
 The Note taking app will allow users to easily make files/directories, take notes easily that will automatically be saved to a quicknote.txt file, and read the contents of that file.
-##### Why am I developing it?
+#####Why am I developing it?
 I am developing this app because I personally wanted to be able to quickly and easily make notes from the command line, as I'm usually pretty bad at organising and keeping my notes all in one place. So I thought it would be interesting to make an application that did that for me.
-##### Why/How it would be used?
+#####Why/How it would be used?
 As to the why it would be used, I would imagine it would make it easy for developers that work in the command line a lot to take quick simple notes that they could find easily later. It can be used fairly easily from the CLI.
 
 ###Features
@@ -26,7 +26,7 @@ The user can simply type in the command for what they want the application to do
 If they type in a command that is not realised by the program, a prompt saying "I'm sorry I didn't quite catch that" will appear in the terminal. If a significant error occurrs, such as trying to remove a directory that has files inside of it, an error message of "Whoops, that shouldn't have happened" will appear.
 
 ###Control Flow Diagram
-![#Alexs_Terminal_app_Flowchart.png](./Alexs_Terminal_app_Flowchart.png)
+![#Alex's Terminal app Flowchart.png](./flowchart_pictures/Alex's Terminal app Flowchart.png)
 
 ###Implementation Plan
 ####How the features will be implemented?
@@ -52,10 +52,9 @@ While this should all be reasonably straightforward to add, it does kind of make
 
 ###Help file
 ####Steps to install application
-Download Zip file and then run the ruby program terminal_app.rb from command terminal as 'ruby terminal_app.rb'
+
 
 ####Dependencies
-working command line interface and ruby enabled on the computer (preferably rvb 2.6.3core)
 
 ####system/hardware requirements
 minimum operating system: windows 95, mac OS X 10
@@ -86,11 +85,10 @@ After running the application a prompt will appear telling the user their option
 
 ###Two tests to check the application is running as expected
 
-|   | Feature        | Test Case                                                    | Test Data                    | Expected result                                      | Actual Result                                                     | Status | Comment                                                                                                                               |
-|---|----------------|--------------------------------------------------------------|------------------------------|------------------------------------------------------|-------------------------------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 1 | Make quicknote | Testing if quicknote saves blank user input                  | u_input1 == " "              | A blank space will be left in the text file document | A blank space was left in the text file, no error                 | Passed | expected this outcome                                                                                                                 |
-| 2 | Move file      | Moving file without adding the .txt to the end of user input | e.g. u_input4 == "quicknote" | Will move the file over                              | Did not move the file over to the directory I tried to move it to | Failed | File was not transferred over as program takes u_input4 exactly as it was   put in, so user needs to input u_input == "quicknote.txt" |
-|   |                |                                                              |                              |                                                      |                                                                   |        |                                                                                                                                       |
+### Each test should
+####cover a different feature of the application
+####state what is being tested
+####provide at least Two test cases and the expected results for each case
 
 ###GitHub repository
 https://github.com/Alkex1/Terminal_Application
